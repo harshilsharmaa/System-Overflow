@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>header}}
+</head>
+<body>
+    
+    
+    {{>navbar}}
+   <div class=" login-container">
+        <div class="login">
+            {{#if error}}
+            <div class="error" id="error">
+                <h3>Invalid Login Credentials</h3>
+                <button type="submit" id="error-btn">X</button>
+            </div>
+            {{/if}}
+            <form action="/auth/google" method="get">
+                {{!-- <div class="form-component">
+                    <label for="name">Email</label>
+                    <input name="email" type="email" placeholder="Your Email">
+                </div>
+                <div class="form-component">
+                    <label for="name">Password</label>
+                    <input name="password" type="password" placeholder="Your Password">
+                </div>
+                
+                <div class="form-component login signup">
+                    <p>New User? <a href="/signup">Sign Up</a></p>
+                </div>
+
+                <div class="form-component">
+                    <button type="submit" class="btn">Log In</button>
+                    <a href="/auth/google" class="btn-google">Or Continue with Google</a>
+                </div> --}}
+
+                <div class="google-btn-box">
+                    <h1>Continue with Stack Overflow</h1>
+
+                    <div class="google-btn-box">
+                        <button type="submit"><i class="fab fa-google"></i>Login with google</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+        
+    </div>
+
+
+    {{>footer}}
+</div>
+<script src="../../javascript/index.js"></script>
+</body>
+</html>

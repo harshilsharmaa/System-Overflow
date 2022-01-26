@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>header}}
+</head>
+
+<body>
+  {{>navbar}}
+
+  <div class="container">
+    <div class="showquestion">
+      <div class="heading">
+        <div class="title">
+
+        </div>
+        <div class="info">
+          <ul>
+            <li><span>Asked: </span>
+              <p>{{formatDate date}}</p>
+            </li>
+            <li><span>By: </span>
+              <p><a class="user-profile-link" href="/user/profile/{{question.user.id}}">{{question.user.displayName}}</a></p>
+            </li>
+          </ul>
+          <div class="button-box">
+            <a href="/questions/editquestion/{{question.id}}"><i class="fas fa-pen"></i>Edit</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="discription">
+        <p>{{{question.description}}}</p>
+      </div>
+      <div class="image">
+        <img src="../../images/{{question.mainimage}}" alt="" srcset="">
+      </div>
+      <div class="tag">
+        {{#each question.tags}}
+        <div class="tag-box">{{this}}</div>
+        {{/each}}
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="answers">
+        <div class="heading">
+          {{!-- <h2>{{{length questions.comments}}} Answers</h2> --}}
+        </div>
+        {{#each question.answers}}
+        <div class="answer">
+          <p>{{this.answer}}</p>
+          <div class="info">
+            <ul id="answer-info">
+              <li><span>Answered: </span>
+                <p>{{formatDate this.date}}</p>
+              </li>
+              <li id="answer-user-info"><span><img src="{{this.user.image}}" alt=""></span>
+                <p><a class="user-profile-link" href="/user/profile/{{this.user.id}}">{{this.user.displayName}}</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hr"></div>
+        {{/each}}
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="youranswer">
+        <div class="heading">
+          <h2>Your Answer</h2>
+        </div>
+        <form action="/questions/show/{{question._id}}/answer" method="post">
+
+          {{#if logedin}}
+            <div class="form-component">
+              <textarea name="answer" id="editor1"></textarea>
+            </div>
+            <div class="form-component">
+              <button type="submit" class="btn">Post Answer</button>
+            </div>
+
+          {{else}}
+            <div class="form-component">
+              <a class="btn" href="/login">Login To Answer</a> 
+            </div>
+            <div class="form-component">
+              <textarea name="comment" id="editor1" readonly></textarea>
+            </div>
+
+          {{/if}}
+        </form>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  {{!-- {{>footer}} --}}
+
+  <script src="index.js"></script>
+  <script src="../../ckeditor/ckeditor.js"></script>
+  <script>
+    CKEDITOR.replace('editor1');
+  </script>
+
+  <script src="../../javascript/index.js"></script>
+
+
+</body>
+
+</html>

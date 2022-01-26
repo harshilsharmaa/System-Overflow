@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>header}}
+</head>
+<body>
+    {{>navbar}}
+
+    <div class="container">
+        <div class="signup">
+            <form action="/signup" method="post">
+                <div class="form-component">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" placeholder="Your Name">
+                </div>
+                <div class="form-component">
+                    <label for="name">Email</label>
+                    <input name="email" type="email" placeholder="Your Email">
+                </div>
+                <div class="form-component">
+                    <label for="name">Password</label>
+                    <input name="password" type="password" placeholder="Password must be of minimum 8 characters">
+                </div>
+                <div class="form-component">
+                    <label for="name">Confirm Password</label>
+                    <input name="cpassword" type="password" placeholder="">
+                </div>
+                
+                <div class="form-component login">
+                    <p>Already a member? <a href="/login">Log In</a></p>
+                </div>
+
+                <div class="form-component">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+
+    {{>footer}}
+</body>
+</html>

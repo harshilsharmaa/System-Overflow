@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../stylesheets/style.css">
+    <title>Signup page</title>
+</head>
+<body>
+    {{>navbar}}
+
+   <div class="container">
+       <div class="admin">
+           <div class="admin-top">
+               <h2>Total Users: 10</h2>
+               <div class="users">
+                   <div class="user-info">
+                    <table>
+                        <tr>
+                            <th>Sr.</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Date of Registration</th>
+                          <th>Questions</th>
+                          <th>Reports</th>
+                        </tr>
+                        {{#each users}}
+                        <tr>
+                          <td>1</td>
+                          <td>{{this.name}}</td>
+                          <td>{{this.email}}</td>
+                          <td>{{this.date}}</td>
+                          {{!-- <td>{{{length this.myquestions}}}</td> --}}
+                          <td>0</td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                   </div>
+               </div>
+           </div>
+
+           <div class="hr"></div>
+           <div class="admin-bottom">
+               <div class="deleteUser admin-bottom-item">
+                   <h2>Remove User</h2>
+                   <form action="/removeuser" method="post">
+                       <input type="email" name="email" placeholder="User Email">
+                       <button type="submit">Remove</button>
+                   </form>
+               </div>
+
+               <div class="makeadmin admin-bottom-item">
+                <h2>Make Admin</h2>
+                <form action="/makeadmin" method="post">
+                    <input type="email" name="email" placeholder="User Email">
+                    <button type="submit">Make Admin</button>
+                </form>
+               </div>
+               <div class="makeadmin admin-bottom-item">
+                <h2>Remove Admin</h2>
+                <form action="/removeadmin" method="post">
+                    <input type="email" name="email" placeholder="User Email">
+                    <button type="submit">Remove Admin</button>
+                </form>
+               </div>
+           </div>
+       </div>
+   </div>
+
+{{>footer}}
+</body>
+</html>

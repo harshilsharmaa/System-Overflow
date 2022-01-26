@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>header}}
+</head>
+
+<body>
+  {{>navbar}}
+
+ <div class="container">
+
+        <div class="left">
+            <div class="by-tags">
+                <p>Search By Tags</p>
+                <div class="by-tags-box">
+                    <form action="/bytag" method="post">
+                        <select name="tags" id="sel">
+                            <option id="opt" value="python">Python</option>
+                            <option id="opt" value="javascript">JavaScript</option>
+                            <option id="opt" value="c">C</option>
+                            <option id="opt" value="nodejs">NodeJS</option>
+                            <option id="opt" value="mongodb">MongoDB</option>
+                            <option id="opt" value="database">DataBase</option>
+                        </select>
+                        <button type="submit" class="btn">Go</button>
+                    </form>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <div class="active-ques">
+                <a href="/activequestions">Active Question</a>
+                <a href="/index">All Question</a>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-heading">
+                {{#if by_tag}}
+                <h1>{{len}} Results Found</h1>
+                
+                {{else}} {{#if active_ques}}
+                <h1>{{len}} Results Found</h1>
+                {{else}}
+                <h1>Top Questions</h1>
+                {{/if}} {{/if}}
+                <a href="/questions/askquestion">Ask Question</a>
+            </div>
+            <div class="ques-box">
+              {{#each questions}}
+                <div class="questions">
+                    <div class="question-left">
+                        {{#if (length this.answers)}}
+                        <div class="status" id="answered">
+                            <p>{{length this.answers}}</p>
+                            <p>answers</p>
+                        </div>
+                        {{else}}
+                        <div class="status">
+                            <p>0</p>
+                            <p>answers</p>
+                        </div>
+                        {{/if}}
+                    </div>
+                    <div class="question-right">
+                        {{!-- <div class="title"><a href="/show/{{this._id}}">{{{truncateText this.title}}}</a></div> --}}
+                        <div class="title"><a href="/questions/show/{{this._id}}">{{ this.title}}</a></div>
+                        <div class="tag_and_date">
+                            <div class="tag">
+                                {{#each this.tags}}
+                                    <div class="tag-box">{{this}}</div>
+                                {{/each}}
+                            </div>
+                            <div class="date">
+                                <p>asked By: <a class="user-profile-link" href="/user/profile/{{user._id}}">{{truncateName this.user.displayName}}</a></p>
+                                <p>{{formatDate date}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               {{/each}}
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+<script src="../../javascript/index.js"></script>
+</body>
+
+</html>

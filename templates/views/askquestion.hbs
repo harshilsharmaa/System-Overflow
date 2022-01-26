@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>header}}
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container">
+        <div class="askquestion">
+            <div class="main-heading">
+                <h2>Ask a question</h2>
+            </div>
+            <form action="/questions/askquestion" method="post" enctype="multipart/form-data">
+                <div class="form-component">
+                    <label for="title">Title</label>
+                    <p>Be specific and imagine you’re asking a question to another person</p>
+                    <input name="title" type="text" placeholder="eg: how to use <p> tag in HTML">
+                </div>
+
+                <div class="form-component">
+                    <label for="">Body</label>
+                    <p>Include all the information someone would need to answer your question</p>
+                    <textarea name="description" id="editor1">
+                    </textarea>
+                </div>
+
+                <div class="from-component-file">
+                    <input type="file" name="mainimage" id="file">
+                </div>
+
+                 <div class="form-component for-tags">
+
+                    <div class="custom-checkbox">
+                        <input class="check"  type="checkbox" name="mongodb" id="python">
+                        <span class="checkmark"></span>
+                        <p>MongoDB</p>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input class="check"  type="checkbox" name="nodejs" id="python">
+                        <span class="checkmark"></span>
+                        <p>NodeJS</p>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input class="check"  type="checkbox" name="python" id="python">
+                        <span class="checkmark"></span>
+                        <p>Python</p>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input class="check"  type="checkbox" name="express" id="python">
+                        <span class="checkmark"></span>
+                        <p>express</p>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input class="check"  type="checkbox" name="javascript" id="python">
+                        <span class="checkmark"></span>
+                        <p>JavaScript</p>
+                    </div>
+                </div>
+
+                <div class="form-component">
+                    <button type="submit" class="btn">Post Question</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+        <script src="./ckeditor/ckeditor.js"></script>
+        <script>
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace( 'editor1' );
+        </script>
+</form>
+
+
+{{!-- {{>footer}} --}}
+</body>
+</html>
+

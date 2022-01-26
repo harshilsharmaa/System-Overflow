@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>header}}
+</head>
+
+<body>
+  {{>navbar}}
+
+
+
+
+  <div class="container">
+        <div class="profile">
+            <div class="info-box">
+                <div class="img-box">
+                    <img src="{{user.image}}" alt="">
+                </div>
+                <div class="info">
+                    <h2>{{user.displayName}}</h2>
+                    {{!-- <p>{{user.email}}</p> --}}
+                </div>
+
+                {{#if userAuthor}}
+                <div class="button-box">
+                    {{!-- <a href="/editprofile/{{user.id}}">Edit Profile</a> --}}
+                    <a href="/user/deleteaccount/{{user.id}}">Delete Account</a>
+                </div>
+                {{/if}}
+            </div>
+            <div class="profile-hr"></div>
+    
+            <div class="question-status">
+                <div class="profile-left">
+                    <h1>Question Asked</h1>
+
+                    {{#if (length user.questions)}}
+                       {{#each user.questions}}
+                        <div class="asked-box">
+
+                            <div class="title"><a href="/show/{{this._id}}">{{this.title}}</a></div>
+                            <div class="button-box">
+                                {{#if ../userAuthor}}
+                                    <a href="/questions/deleteQuestion/{{this.id}}">Delete</a>
+                                {{/if}}
+                            </div>
+                        </div>
+                   {{/each}}
+
+                    {{else}}
+                      <div class="no-data">
+                          <h2>0</h2>
+                          <h3>No Questions</h3>
+                      </div>
+                    {{/if}}
+                   
+                </div>
+                <div class="vr"></div>
+                <div class="profile-right">
+                    <h1>Answered</h1>
+                     {{#if (length user.answers)}}
+                        {{!-- <h1>{{user.questions}}</h1> --}}
+                       {{#each user.answers}}
+                        <div class="asked-box">
+
+                            <div class="title"><a href="/show/{{this._id}}">{{{truncateText this.answer}}}</a></div>
+                            <div class="button-box">
+                                {{#if ../userAuthor}}
+                                    <a href="/deleteQuestion/{{this.id}}">Delete</a>
+                                {{/if}}
+                            </div>
+                        </div>
+                   {{/each}}
+
+                    {{else}}
+
+                    <div class="no-data">
+                        <h2>0</h2>
+                        <h3>No Answers</h3>
+                    </div>
+
+                    {{/if}}
+                   
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- {{>footer}} --}}
+  <script src="../../javascript/index.js"></script>
+</body>
+
+</html>

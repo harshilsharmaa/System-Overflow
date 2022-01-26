@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    {{>navbar}}
+
+    <div class="container">
+        <div class="contact">
+            <h1>Contact Us</h1>
+            <div class="contact-main">
+                <div class="contact-form">
+                    <form action="/index/contact" method="post">
+                        <div class="form-component">
+                            <label for="name">Name</label>
+                            <input name="name" type="text" placeholder="Your Name">
+                        </div>
+                        <div class="form-component">
+                            <label for="name">Email</label>
+                            <input name="email" type="email" placeholder="Your Email">
+                        </div>
+
+                        <div class="form-component">
+                            <label for="name">Your Message</label>
+
+                            <textarea name="message" id="" cols="30" rows="10" placeholder="Enter your message here"></textarea>
+                        </div>
+
+                        <div class="form-component">
+                            <button type="submit" class="btn">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="vr"></div>
+
+                <div class="contact-info">
+                   <div class="detail" id="phone">
+                        <i class="fas fa-phone-alt "></i>
+                        <p>91 XXXXX-XXX08</p>
+                    </div>
+                    <div class="detail" id="address">
+                        <i class="fas fa-map-marker-alt  "></i>
+                        <p>Sirsa (Haryana)</p>
+                    </div>
+                    <div class="detail" id="email">
+                        <i class="far fa-envelope "></i>
+                        <p>harshilsharmaa0@gmail.com</p>
+                    </div>
+                    <div class="line">
+                        <hr>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/harshilsharmaa" target="_blank"><i
+                                class="fab fa-linkedin linkedin"></i></a>
+                        <a href="https://instagram.com/harshilsharmaa" target="_blank"><i
+                                class="fab fa-instagram insta"></i></a>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!-- {{>footer}} --}}
+    <script src="../../javascript/index.js"></script>
+</body>
+</html>

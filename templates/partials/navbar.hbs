@@ -1,0 +1,46 @@
+<div class="navbar ">
+    <div class="logo">
+        <!-- <a href="">logo</a> -->
+        <img src="../../images/logo.png" alt="">
+    </div>
+    <div class="items">
+        <ul>
+            <li><a class="item" href="/index">HOME</a></li>
+            <li><a class="item" href="/contact">CONTACT</a></li>
+            <li><a class="item" href="/about">ABOUT</a></li>
+            {{!-- <img src="../../images/arrow.svg" alt="images"> --}}
+            <div class="profile-box">
+                <div class="profile-img">
+                    {{#if login}}
+                    <img src="{{user.image}}" alt="" srcset="">
+                    {{!-- <img src="../../images/{{{currentUserprofileimage}}}" alt="" srcset=""> --}}
+
+                    {{else}}
+
+                    <img src="../../images/noimage.jpg" alt="" srcset="">
+                    {{/if}}
+                </div>
+                <div class="dropdown">
+                    <button onclick="dropdown()" class="dropbtn"></button>
+                    {{!-- <img id="dd" src="../../images/arrow.svg" alt="hello"> --}}
+
+                    <div id="dropdownID" class="dropdown-content">
+                        {{#if login}}
+                        {{#if admin}}
+                        <li><a href="/admin">Admin</a></li>
+                        {{/if}}
+                        <li><a href="/user/profile/{{user._id}}">Profile</a></li>
+                        <li><a href="/auth/logout">Logout</a></li>
+                        {{else}}
+
+                        <li><a href="/login">Login</a></li>
+                        {{!-- <li><a href="/signup">SignUp</a></li> --}}
+
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>

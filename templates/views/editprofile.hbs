@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{>header}}
+</head>
+
+<body>
+  {{>navbar}}
+
+ <div class="container">
+        <div class="profile">
+            <div class="edit-info-box">
+                <form action="/infosave/{{user._id}}" method="post" enctype="multipart/form-data">
+                    <div class="img-box">
+                    {{#if user.profileimage}}
+                    <img src="../../images/{{user.profileimage}}" alt="">
+                    {{else}}
+                    <img src="../../images/noimage.jpg" alt="">
+                    {{/if}}
+                        <h2>Change/Remove</h2>
+                        <input type="file" name="profileimage" id="">
+                    </div>
+                    <div class="info">
+                        <input type="text" name="name"  placeholder="{{user.name}}">
+                        <input type="email" name="email"  placeholder="{{user.email}}">
+                    </div>
+                    <div class="save-button-box">
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+    
+        </div>
+
+    </div>
+{{>footer}}
+    <script src="../../javascript/index.js"></script>
+</body>
+
+</html>

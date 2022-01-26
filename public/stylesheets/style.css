@@ -1,0 +1,1432 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Passions+Conflict&family=Roboto:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+::selection {
+    /* color: red; */
+    background: #b58aa53b;
+  }
+
+/* ############################### UTILITY CLASSES ################################## */
+
+.logo{
+    height: 60px;
+    width: 60px;
+    /* border: 1px solid red; */
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline-block;
+}
+
+.dropdown a,
+.items .item{
+    color: #B58AA5;
+}
+
+.items .item:hover,
+.dropdown a:hover{
+    color: #84596B;
+}
+
+
+.btn-google{
+    color: white;
+    background-color: rgb(194, 88, 88);
+    font-size: 18px;
+    padding: 5px 12px;
+}
+
+.user-profile-link{
+    color: rgba(0, 0, 255, 0.829);
+}
+
+.user-profile-link:hover{
+    color: rgb(0, 0, 255);
+}
+
+
+/* ################################################################################## */
+
+
+/* ################################### NAVBAR #######################################*/
+
+.navbar{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 3px 20px 1px rgba(206, 207, 206);
+}
+
+/* ######################################## DropDown ################################ */
+
+.dropdown{
+    position: relative;
+    
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    margin: 13px 0;
+    right: 0;
+    min-width: 90px;
+    box-shadow: 5px 5px 10px 1px rgb(206, 207, 206);
+    background: white;
+}
+
+.dropdown-content li{
+    display: block;
+}
+
+.dropdown-content li:hover{
+    background: #cecfce55;
+}
+
+.show{
+    display: block;
+}
+
+.dropdown button{
+    background: url("../images/arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    border: none;
+}
+
+
+
+/* ##################################################################################### */
+
+.logo{
+    /* border: 1px solid black; */
+    margin: 3px 10px;
+}
+
+.items{
+    /* border: 1px solid green; */
+    margin: 20px 25px;
+}
+
+.items ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.items li{
+    padding: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+    /* border: 1px solid pink; */
+}
+
+
+.profile-box{
+    display: inline-flex;
+    /* border: 1px solid red; */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.profile-box .profile-img{
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    /* border: 1px solid blue; */
+}
+
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+
+/* ################################################################################## */
+
+
+/* ################################# CONTAINER ##################################### */
+
+.container{
+    display: flex;
+    flex-direction: row;
+    /* height: 85vh; */
+}
+
+.container .left{
+    width: 20%;
+    border-right: 1px solid rgb(206, 207, 206);
+    height: 89vh;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 10px;
+}
+
+.container .left .hr{
+    border-bottom: 1px solid #8d8d8d;
+}
+
+.container .left .by-tags{
+    /* border: 1px solid red; */
+    text-align: center;
+    padding: 10px 0;
+}
+
+.container .left .by-tags p{
+    color: #84596B;
+    font-size: 18px;
+    padding: 3px 0;
+}
+
+.container .left .active-ques{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+
+}
+
+.active-ques a{
+    color: #B58AA5;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.active-ques a:hover{
+    color: #84596B;
+}
+
+
+.by-tags-box{
+    display: flex;
+    justify-content: center;
+}
+
+.by-tags-box select{
+    border: 1px solid #B58AA5;
+    border-radius: 5px;
+}
+
+.by-tags-box .btn{
+    background-color: #B58AA5;
+    color: white;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 2px;
+    font-size: 12px;
+    width: 40px;
+}
+
+.by-tags-box .btn:hover{
+    background-color: #84596B;
+    /* border: 1px solid #B58AA5; */
+    /* color: #B58AA5; */
+}
+
+.container .right{
+    width: 80%;
+    height: 89vh;
+    overflow: auto;
+}
+
+.container .right-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-heading a{
+    width: 120px;
+    height: 40px;
+    padding: 10px 5px;
+    color: white;
+    background-color: #B58AA5;
+    border: 1px solid white;
+    margin: 25px 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+.right-heading a:hover{
+    border: 1px solid #B58AA5;
+    color: #B58AA5;
+    background-color: #fff;
+}
+
+.container h1{
+    padding: 25px 20px;
+    font-size: 30px;
+    color:  #8d8d8d;
+}
+
+.ques-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid green; */
+    padding: 30px 0;
+}
+
+.questions{
+    margin: 2px 0;
+    padding: 0px 0;
+    height: 90px;
+    width: 90%;
+    display: flex;
+    background-color: rgb(237 238 239 / 0.45);
+}
+
+
+.question-left{
+    /* border: 1px solid red; */
+    width: 15%;
+}
+
+.question-left .status{
+    /* border: 1px solid yellow; */
+    height: 100%;
+    /* margin: 2px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+.question-left .status p{
+    padding: 5px 0;
+    color: #84596B;
+}
+
+.question-left  #answered{
+
+    background: rgba(0, 128, 0, 0.089);
+}
+
+.question-right{
+    /* border: 1px solid blue; */
+    padding: 10px 7px;
+    width: 85%;
+    
+}
+
+.question-right .title{
+    /* border: 1px solid black; */
+    height: 60%;
+
+}
+
+.question-right .title a{
+    font-size: 20px;
+    color: #B58AA5;
+    font-weight: bold;
+}
+
+.question-right .title a:hover{
+    color: #84596B;
+}
+
+.question-right .tag_and_date{
+    height: 40%;
+    /* border: 1px solid yellow; */
+    display: flex;
+    
+}
+
+.tag{
+    /* border: 1px solid red; */
+    width: 70%;
+    display: flex;
+}
+.date{
+    /* border: 1px solid red; */
+    width: 30%;
+    color: #84596B;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag-box{
+    height: 26px;
+    min-width: 80px;
+    border-radius: 3px;
+    margin: 3px 10px;
+    padding: 1px 2px;
+    text-align: center;
+    font-size: 15px;
+    background-color:  #dde0dd;
+    color: #84596B;
+    font-weight: 600;
+}
+
+/* ################################################################################# */
+
+
+
+/* ################################### FOOTER ################################### */
+
+.footer{
+    height: 9vh;
+    background: #B58AA5;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.footer h2{
+    padding: 20px 0;
+    color: #fff;
+}
+
+
+/* ################################################################################ */
+
+
+/* ######################################### Ask Question Page #################### */
+
+.main-heading{
+    padding: 0;
+    font-size: 20px;
+    color: #8d8d8d;
+}
+
+
+
+.askquestion,
+.showquestion,
+.signup,
+.login,
+.profile,
+.contact,
+.about,
+.admin{
+    /* border: 1px solid red; */
+    /* height: 60vh; */
+    margin: 50px auto;
+    width: 1000px;
+    padding: 10px 10px;
+    background-color: #84596b13;
+}
+
+.askquestion form label,
+.signup form label,
+.contact form label,
+.about form label{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    color: #84596B;
+}
+
+.askquestion form input{
+    width: 100%;
+    height: 30px;
+    padding: 4px 3px;
+    margin-top: 10px;
+    background: #f6f2f4;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #8d8d8d;
+    caret-color: #84596B;
+    color: #B58AA5;
+} 
+
+.askquestion form input:focus{
+    border-bottom: 2px solid #84596B;
+}
+
+.askquestion form input[type=file]{
+    border: none;
+}
+
+.form-component{
+    padding: 20px 5px;
+}
+
+.form-component p{
+    font-size: 15px;
+}
+
+.form-component .btn{
+    background-color: #B58AA5;
+    color: white;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    width: 100px;
+    height: 40px;
+}
+
+.form-component .btn:hover{
+    background-color: #84596B;
+}
+
+
+.form-component #file{
+    width: 500px;
+    color: #B58AA5;
+}
+
+input[type="file" i] {
+    color: #84596B;
+}
+/* ################################################################################ */
+
+
+/* ######################################### Show Page ########################### */
+
+.showquestion .title{
+    /* border:1px solid red; */
+    
+    padding: 10px 0;
+}
+
+.showquestion .title h1{
+    padding: 0;
+    font-size: 25px;
+    color: #84596B;
+}
+
+
+.showquestion .info{
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.showquestion .info .button-box{
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right:10px;
+    margin-top: 0;
+}
+.showquestion .info .button-box i{
+    padding-right: 12px;
+}
+
+.showquestion .info li{
+
+    padding: 0 10px;
+}
+
+.showquestion .info p{
+    display: inline-block;
+    font-size: 15px;
+    color: #B58AA5;
+    font-weight: bold;
+}
+
+.info li span{
+    font-size: 15px;
+}
+
+.discription{
+    padding: 20px 0;
+}
+
+.discription p{
+    font-size: 17px;
+}
+
+.showquestion .image{
+    padding: 7px;
+    /* border: 1px solid red; */
+    max-width: 800px;
+    max-height: 500px;
+}
+
+.showquestion .image img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.showquestion .hr{
+    border-bottom: 1px solid #8d8d8d7e;
+    width: 100%;
+}
+
+.answers{
+    padding: 10px 5px;
+    /* border: 1px solid red; */
+}
+
+.answers .heading{
+    padding: 10px 0;
+}
+
+.answers .answer{
+    padding: 15px 7px;
+    /* border:1px solid blue; */
+    margin: 0 10px;
+}
+
+.answers .answer p{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.answers .answer .info{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 13px;
+    /* border: 1px solid red; */
+}
+
+.answers .answer .info ul{
+    background: #8d8d8d13;
+    padding: 3px 0;
+}
+
+.answers .hr{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.answers #answer-info{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.answers #answer-user-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#answer-user-info span{
+    padding: 0 4px;
+}
+
+
+.answers span img{
+    width: 20px;
+    height: 20px;
+    margin-top:2px;
+}
+
+.youranswer .heading{
+    /* border: 1px solid red; */
+    padding: 10px 0;
+}
+
+/* ################################################################################ */
+
+/* ################################## sign up page ###########################*/
+
+.signup{
+    width: 50%;
+}
+
+
+.signup form .btn{
+    width: 100%;
+    height: 30px;
+}
+
+.signup form .login{
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    background: none;
+    margin: 0;
+}
+
+.signup form input,
+.contact form input{
+    width: 100%;
+    background: #f6f2f4;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #8d8d8d;
+    caret-color: #84596B;
+    margin-top: 10px;
+    color: #B58AA5;
+}
+
+.signup form input:focus{
+    border-bottom: 2px solid #84596B;
+}
+
+/* ################################################################################ */
+
+
+/* ################################## login page ################################## */
+
+.login-container{
+    height: 80.4vh;
+}
+
+.login{
+    width: 40%;
+}
+
+.login form label{
+    font-size: 20px;
+    color: #B58AA5;
+    font-weight: bold;
+    display: block;
+}
+
+.login form input{
+    width: 100%;
+    padding: 3px 4px;
+    background: #f6f2f4;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #8d8d8d;
+    caret-color: #84596B;
+}
+
+.login form input:focus{
+    border-bottom: 2px solid #84596B;
+}
+
+.login form .signup{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: none;
+    text-align: center;
+}
+
+.login form .btn{
+    width: 100%;
+    height: 30px;
+}
+
+
+.login .error{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 18px;
+    background: #f8d7da;
+    color: #842029;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.login .error button{
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: #8d8d8d;
+}
+
+.error button:hover{
+    cursor: pointer;
+    color: black;
+}
+
+.google-btn-box button{
+    width:200px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4285f4;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.google-btn-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login h1{
+    color: #B58AA5;
+}
+
+.google-btn-box{
+    margin-top: 10px;
+}
+
+.google-btn-box button i{
+    font-size: 20px;
+}
+
+.google-btn-box button:hover{
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
+    background-color: #3871cc;
+}
+  
+  
+
+/* ################################################################################ */
+
+
+
+
+/* #################################### Home Page ################################### */
+
+.header{
+    background: #b58aa50e;
+    width: 100%;
+    height:100vh;
+    padding: 0 8.5%;
+
+}
+
+.logo-img{
+    height: 330px;
+    width: 330px;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+}
+
+.logo-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.container-home{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container-home h1{
+    font-size: 80px;
+    color: #84596B;
+    font-weight: bold;
+}
+
+.container-home p{
+    font-size: 50px;
+    color: #B58AA5;
+}
+
+
+.container-home .btn{
+
+    padding:8px 4px;
+    margin: 10px auto;
+    align-content: center;
+}
+
+
+
+.container-home .btn a{
+
+    padding: 10px 35px;
+    color: white;
+    background-color: #B58AA5;
+    border: 1px solid white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.container-home .btn a:hover{
+    border: 1px solid #B58AA5;
+    background: #b58aa52f;
+    color: #B58AA5;
+}
+
+
+#inspired{
+    color: #B58AA5;
+    font-size: 20px;
+}
+/* ################################################################################## */
+
+
+/* ######################################### Profile Page ########################### */
+
+.profile .info-box{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.img-box{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #84596B;
+    padding: 0 25px;
+}
+
+.img-box img{
+    /* width: 100%;
+    height: 100%; */
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    border: 1px solid #B58AA5;
+    box-shadow: 0px 0px 3px 2px rgb(206, 207, 206);
+}
+
+.info-box .info{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-box .info h2{
+    font-size: 45px;
+    color: #B58AA5;
+}
+
+.info-box .info p{
+    font-size: 25px;
+    color: #8d8d8d;
+}
+
+.button-box{
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+
+.button-box a{
+    
+    box-shadow: 5px 5px 5px 1px rgb(206, 207, 206);
+    font-size: 15px;
+    padding: 10px 10px;
+    text-align: center;
+    background: #B58AA5;
+    color: #fff;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.button-box a:hover{
+    box-shadow: 2px 2px 10px 1px rgb(206, 207, 206);
+    /* box-shadow: none; */
+}
+
+
+.profile-hr{
+    border-bottom: 1px solid #8d8d8d;
+}
+
+.question-status{
+    display: flex;
+}
+
+.question-status .vr{
+    border-left: 1px solid #8d8d8d;
+}
+
+.profile-left{
+    /* border: 1px solid red; */
+    width: 50%;
+}
+.profile-right{
+    /* border: 1px solid red; */
+    width: 50%;
+}
+
+
+.asked-box{
+    /* border: 1px solid red; */
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #b58aa525;
+    width: 95%;
+}
+
+.asked-box .title{
+    /* border: 1px solid red; */
+    text-align: center;
+    color: #84596B;
+    padding: 0 15px;
+}
+
+.asked-box .title a{
+    font-size: 20px;
+    color: #84596b;
+}
+
+.asked-box .button-box{
+    /* border: 1px solid red; */
+    margin-right: 20px;
+
+}
+
+
+
+.no-data{
+    /* border: 1px solid red; */
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-data h2{
+    font-size: 90px;
+    color: #84596B;
+    font-weight: bold;
+}
+
+.no-data h3{
+    font-size: 20px;
+    color: #84596B;
+}
+/* ################################################################################## */
+
+
+
+/* ############################ Edit profile page ###################################### */
+
+.edit-info-box{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}                       
+
+.edit-info-box .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-info-box .info input{
+    display: block;
+    width: 40%;
+    height: 30px;
+    margin: 10px 0;
+    background-color: #f6f2f4;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #8d8d8d;
+    color: ;
+}
+
+.save-button-box{
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.edit-info-box .save-button-box a{
+    padding: 10px 25px;
+    background: #B58AA5;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 5px 5px 5px 1px rgb(206, 207, 206);
+}
+
+.save-button-box a:hover{
+    box-shadow: 2px 2px 10px 1px rgb(206, 207, 206);
+    /* box-shadow: none; */
+
+}
+/* ################################################################################## */
+
+
+/* #############################  Custom Check Box ################################### */
+
+
+
+
+
+  /* Customize the label (the container) */
+ .custom-checkbox{
+    display: flex;
+    position: relative;
+    padding-left: 35px;
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100px;
+    height: 26px;
+    background: #dde0dd;
+    color: #84596b;
+    font-weight: bold;
+    align-items: center;
+  }
+
+  .custom-checkbox:hover{
+      background-color: #ccc;
+  }
+  
+
+  .custom-checkbox:checked{
+      background-color: #B58AA5;
+  }
+  /* Hide the browser's default checkbox */
+  .custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #dde0dd;
+  }
+  
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .custom-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  /* Style the checkmark/indicator */
+  .custom-checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #84596B;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .for-tags{
+      display: flex;
+      flex-direction: row;
+  }
+
+
+
+
+
+
+  /* ############################################ Contact Page ##################################### */
+
+.contact{
+    width: 60%;
+}
+
+.contact textarea{
+    width: 100%;
+    outline: none;
+    border: 1px solid #B58AA5;
+    background-color: #f6f2f4;
+}
+
+/* .contact form textarea:focus{
+    border: 2px solid #84596B;
+}
+
+.contact form input:focus{
+    border-bottom: 2px solid #84596B;
+} */
+
+.contact-main{
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-main .vr{
+    border-left: 1px solid #8d8d8d;
+}
+
+.contact-form{
+    width: 50%;
+    /* border: 1px solid red; */
+    padding: 0 10px;
+}
+
+.contact-info{
+    width:50%;
+    padding: 0 10px;
+    /* border: 1px solid red; */
+}
+
+.contact-info .detail{
+    /* border: 1px solid blue; */
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info .detail i{
+    color: #B58AA5;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+.contact-info .detail p{
+    color: #B58AA5;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.contact .line{
+    padding: 40px 5px;
+    /* width: 95%; */
+    text-align: center;
+}
+
+.contact .social-links{
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.contact .social-links a{
+    font-size: 30px;
+    color: #B58AA5;
+}
+
+  /* ################################################################################################## */
+
+
+
+  /* ############################## Admin Page ################################################## */
+
+.admin{
+      display: flex;
+      flex-direction: column;
+}
+
+.admin-top{
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+
+
+
+.user-info{
+    /* border: 1px solid blue; */
+    overflow: auto;
+    max-height: 200px;
+}
+
+.user-info th{
+    font-size: 20px;
+    padding: 5px 10px;
+    color: #84596b;
+
+}
+
+.user-info td{
+    font-size: 15px;
+    padding: 2px 2px;
+}
+
+.user-info table{
+    text-align: center;
+
+}
+
+table, th, td {
+    border: 1px solid #B58AA5;
+    border-collapse: collapse;
+  }
+
+
+.admin-bottom{
+    /* border: 1px solid blue; */
+    display: flex;
+}  
+
+.admin-bottom .admin-bottom-item{
+    /* border:1px solid red; */
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 1px 1px 5px 1px #8d8d8d;
+}
+
+.admin-bottom-item h2{
+    text-align: center;
+    color: #B58AA5;
+}
+
+.admin-bottom-item button{
+    padding: 8px 15px;
+    background: #B58AA5;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 5px 5px 5px 1px rgb(206, 207, 206);
+    border: none;
+    cursor: pointer;
+}
+
+.admin-bottom-item button:hover{
+    box-shadow: 1px 1px 1px 1px rgb(206, 207, 206);
+}
+
+.admin-bottom-item input{
+    height: 25px;
+    outline: none;
+    padding: 2px 5px;
+    border: 1px solid #84596b;
+    border-radius: 3px;
+    color: #B58AA5;
+}
+
+
+.admin .hr{
+    padding: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #8d8d8d;
+}
+
+  /* ############################################################################################ */
+
+
+
+
+  /* ############################## Error Page ########################################## */
+
+.error{
+    /* border: 1px solid red; */
+    /* height: 400px; */
+    /* width:400px; */
+    margin: 40px auto;
+}
+
+.error img{
+    width: 100%;
+    height: 100%;
+}
+
+.error h2{
+    font-weight: bold;
+    text-align: center;
+    color: #B58AA5;
+    font-size: 30px;
+}
+
+.error h1{
+    font-size: 200px;
+    text-align: center;
+    color: #B58AA5;
+    font-weight: bold;
+}
+
+.error p{
+    font-size: 20px;
+    text-align: center;
+    color: #B58AA5;
+}
+
+.error .back{
+    padding: 20px 0;
+    text-align: center;
+}
+
+.back a{
+    background-color: #B58AA5;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 34px;
+}
+
+
+
+/* ############################### About ############################# */
+
+.about h1{
+    text-align: center;
+}
+
+
+
